@@ -1,0 +1,69 @@
+@page "/"
+<PageTitle>安定堂胡氏家谱 · 信息采集</PageTitle>
+
+<div class="home-container">
+    <!-- 顶部欢迎区 -->
+    <div class="welcome-banner">
+        <h1 class="family-name">🏮 安定堂胡氏家谱</h1>
+        <p class="welcome-text">欢迎回来，@UserDisplayName</p>
+    </div>
+
+    <!-- 功能卡片区 -->
+    <div class="card-grid">
+        <div class="feature-card" @onclick="NavigateToCollection">
+            <div class="card-icon">📝</div>
+            <h3>信息采集</h3>
+            <p>填写本人及直系成员信息</p>
+        </div>
+
+        <div class="feature-card" @onclick="NavigateToTree">
+            <div class="card-icon">🌳</div>
+            <h3>世系查阅</h3>
+            <p>查看家族世系图（仅自身及上下两代）</p>
+        </div>
+
+        <div class="feature-card" @onclick="NavigateToUpload">
+            <div class="card-icon">📷</div>
+            <h3>资料上传</h3>
+            <p>上传墓碑照、老照片、口述录音</p>
+        </div>
+
+        <div class="feature-card" @onclick="NavigateToProfile">
+            <div class="card-icon">👤</div>
+            <h3>个人中心</h3>
+            <p>查看我的提交状态</p>
+        </div>
+    </div>
+
+    <!-- 最近提交记录 -->
+    <div class="recent-submissions">
+        <h3>我的提交记录</h3>
+        @foreach (var sub in Submissions)
+        {
+            <div class="submission-item">
+                <span class="submission-status">@GetStatusText(sub.Status)</span>
+                <span class="submission-date">@sub.SubmittedAt.ToString("yyyy-MM-dd")</span>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<SubmissionRecord> Submissions = new();
+
+    private string GetStatusText(string status)
+    {
+        return status switch
+        {
+            "pending" => "⏳ 待审核",
+            "accepted" => "✅ 已采纳",
+            "needs_supplement" => "📝 需补充",
+            _ => status
+        };
+    }
+
+    void NavigateToCollection() => Navigation.NavigateTo("/collection");
+    void NavigateToTree() => Navigation.NavigateTo("/tree");
+    void NavigateToUpload() => Navigation.NavigateTo("/upload");
+    void NavigateToProfile() => Navigation.NavigateTo("/profile");
+}

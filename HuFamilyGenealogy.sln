@@ -1,0 +1,85 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Editor.Core", "src\Editor\Hu.Editor.Core\Hu.Editor.Core.csproj", "{A1B2C3D1-0001-0001-0001-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Editor.Models", "src\Editor\Hu.Editor.Models\Hu.Editor.Models.csproj", "{A1B2C3D1-0002-0001-0001-000000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Editor.Services", "src\Editor\Hu.Editor.Services\Hu.Editor.Services.csproj", "{A1B2C3D1-0003-0001-0001-000000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Editor.UI", "src\Editor\Hu.Editor.UI\Hu.Editor.UI.csproj", "{A1B2C3D1-0004-0001-0001-000000000004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Editor.WPF", "src\Editor\Hu.Editor.WPF\Hu.Editor.WPF.csproj", "{A1B2C3D1-0005-0001-0001-000000000005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Editor.Tests", "src\Editor\Hu.Editor.Tests\Hu.Editor.Tests.csproj", "{A1B2C3D1-0006-0001-0001-000000000006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Collector.Shared", "src\Collector\Hu.Collector.Shared\Hu.Collector.Shared.csproj", "{B2C3D4E1-0001-0001-0001-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Collector.Android", "src\Collector\Hu.Collector.Android\Hu.Collector.Android.csproj", "{B2C3D4E1-0002-0001-0001-000000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Collector.Web", "src\Collector\Hu.Collector.Web\Hu.Collector.Web.csproj", "{B2C3D4E1-0003-0001-0001-000000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Cloud.API", "src\Cloud\Hu.Cloud.API\Hu.Cloud.API.csproj", "{C3D4E5F1-0001-0001-0001-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Cloud.Models", "src\Cloud\Hu.Cloud.Models\Hu.Cloud.Models.csproj", "{C3D4E5F1-0002-0001-0001-000000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hu.Cloud.Sync", "src\Cloud\Hu.Cloud.Sync\Hu.Cloud.Sync.csproj", "{C3D4E5F1-0003-0001-0001-000000000003}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D1-0001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D1-0001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D1-0001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D1-0001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D1-0002-0001-0001-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D1-0002-0001-0001-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D1-0002-0001-0001-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D1-0002-0001-0001-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D1-0003-0001-0001-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D1-0003-0001-0001-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D1-0003-0001-0001-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D1-0003-0001-0001-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D1-0004-0001-0001-000000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D1-0004-0001-0001-000000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D1-0004-0001-0001-000000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D1-0004-0001-0001-000000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D1-0005-0001-0001-000000000005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D1-0005-0001-0001-000000000005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D1-0005-0001-0001-000000000005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D1-0005-0001-0001-000000000005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D1-0006-0001-0001-000000000006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D1-0006-0001-0001-000000000006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D1-0006-0001-0001-000000000006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D1-0006-0001-0001-000000000006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E1-0001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E1-0001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E1-0001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E1-0001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E1-0002-0001-0001-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E1-0002-0001-0001-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E1-0002-0001-0001-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E1-0002-0001-0001-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E1-0003-0001-0001-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E1-0003-0001-0001-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E1-0003-0001-0001-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E1-0003-0001-0001-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F1-0001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F1-0001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F1-0001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F1-0001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F1-0002-0001-0001-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F1-0002-0001-0001-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F1-0002-0001-0001-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F1-0002-0001-0001-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F1-0003-0001-0001-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F1-0003-0001-0001-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F1-0003-0001-0001-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F1-0003-0001-0001-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

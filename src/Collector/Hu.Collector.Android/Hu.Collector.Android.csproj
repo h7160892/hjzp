@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>Properties\AndroidManifest.xml</ApplicationManifest>
+    <ApplicationIcon>Resources\mipmap-hdpi\icon.png</ApplicationIcon>
+    <RootNamespace>Hu.Collector.Android</RootNamespace>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Hu.Collector.Shared/Hu.Collector.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

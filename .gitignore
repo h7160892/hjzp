@@ -1,0 +1,38 @@
+# 忽略文件
+*.obj
+*.dll
+*.exe
+*.pdb
+*.user
+*.opj
+*.appx
+*.apk
+*.aab
+*.xcframework
+bin/
+obj/
+*.csproj.user
+*.csproj.user.local
+packages/
+publish/
+backups/
+*.enc
+*.bak
+*.tmp
+*.log
+IDE/
+.vs/
+*.suo
+*.userprefs
+*.ipch
+nuget/
+nuget.config
+local.settings.json
+
+# 腾讯文档
+tdoc_*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini

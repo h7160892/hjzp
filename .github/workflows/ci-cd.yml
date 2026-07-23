@@ -1,0 +1,55 @@
+name: 家谱管理系统 CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 设置 .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    
+    - name: 安装 Android workload
+      run: dotnet workload install android
+    
+    - name: 还原 NuGet 包
+      run: dotnet restore HuFamilyGenealogy.sln
+    
+    - name: 编译项目
+      run: dotnet build HuFamilyGenealogy.sln --configuration Release
+    
+    - name: 运行单元测试
+      run: dotnet test src/Editor/Hu.Editor.Tests/Hu.Editor.Tests.csproj --verbosity minimal
+    
+    - name: 发布 EXE 主编端
+      run: |
+        dotnet publish src/Editor/Hu.Editor.WPF/Hu.Editor.WPF.csproj `
+          -c Release -r win-x64 --self-contained true `
+          -p:PublishSingleFile=true `
+          -p:IncludeNativeLibrariesForSelfExtract=true `
+          -o publish/Hu.Editor.WPF
+    
+    - name: 发布私有云 API
+      run: |
+        dotnet publish src/Cloud/Hu.Cloud.API/Hu.Cloud.API.csproj `
+          -c Release -o publish/Hu.Cloud.API
+    
+    - name: 发布 Web 采集端
+      run: |
+        dotnet publish src/Collector/Hu.Collector.Web/Hu.Collector.Web.csproj `
+          -c Release -o publish/Hu.Collector.Web
+    
+    - name: 上传构建产物
+      uses: actions/upload-artifact@v4
+      with:
+        name: builds
+        path: publish/

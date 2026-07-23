@@ -1,0 +1,21 @@
+# 虹乡胡氏安定堂家谱管理系统 - CI/CD 配置
+
+## 构建环境
+- .NET 8.0 SDK
+- Android SDK (API 34+)
+- Node.js 20.x (Blazor WASM)
+
+## 构建步骤
+1. 还原 NuGet 包
+2. 编译所有项目
+3. 运行单元测试
+4. 发布 EXE 主编端
+5. 发布 Android APK
+6. 发布 Web 采集端
+7. 发布私有云 API
+
+## 制品输出
+- `dist/Hu.Editor.WPF/` - EXE 安装包
+- `dist/Hu.Collector.Android.apk` - Android 安装包
+- `dist/Hu.Collector.Web/` - Web 部署包
+- `dist/Hu.Cloud.API/` - API 部署包

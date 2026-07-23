@@ -1,0 +1,167 @@
+@page "/collection"
+<PageTitle>信息采集</PageTitle>
+
+<div class="form-container">
+    <h2>📝 信息采集</h2>
+    <p class="form-hint">请填写您及直系成员的基础信息，提交后等待主编审核</p>
+
+    <div class="step-indicator">
+        <span class="step active">① 基本信息</span>
+        <span class="step">② 家庭成员</span>
+        <span class="step">③ 确认提交</span>
+    </div>
+
+    <form @onsubmit="OnSubmit" @onsubmit:preventDefault>
+        <!-- 姓名 -->
+        <div class="form-group">
+            <label>姓名 *</label>
+            <input @bind="formData.Name" class="form-input" placeholder="请输入姓名" required />
+        </div>
+
+        <!-- 性别 -->
+        <div class="form-group">
+            <label>性别 *</label>
+            <select @bind="formData.Gender" class="form-select">
+                <option value="1">男</option>
+                <option value="0">女</option>
+            </select>
+        </div>
+
+        <!-- 出生日期 -->
+        <div class="form-group">
+            <label>出生日期</label>
+            <input @bind="formData.BirthDate" type="date" class="form-input" />
+        </div>
+
+        <!-- 历法展示切换 -->
+        <div class="form-group">
+            <label>出生日期（农历）</label>
+            <input @bind="formData.LunarBirth" class="form-input" placeholder="如：二零二三年正月初五" />
+            <small class="hint-text">可手动输入农历日期，系统将自动换算</small>
+        </div>
+
+        <!-- 父亲 -->
+        <div class="form-group">
+            <label>父亲姓名</label>
+            <input @bind="formData.FatherName" class="form-input" placeholder="请输入父亲姓名" />
+        </div>
+
+        <!-- 母亲 -->
+        <div class="form-group">
+            <label>母亲姓名</label>
+            <input @bind="formData.MotherName" class="form-input" placeholder="请输入母亲姓名" />
+        </div>
+
+        <!-- 配偶 -->
+        <div class="form-group">
+            <label>配偶姓名</label>
+            <input @bind="formData.SpouseName" class="form-input" placeholder="请输入配偶姓名" />
+        </div>
+
+        <!-- 关系标签 -->
+        <div class="form-group">
+            <label>家庭关系标识</label>
+            <div class="tag-group">
+                <label class="tag-option">
+                    <input type="checkbox" @bind="formData.IsAdoption" />
+                    <span class="tag tag-adoption">过继</span>
+                </label>
+                <label class="tag-option">
+                    <input type="checkbox" @bind="formData.IsMatrilocal" />
+                    <span class="tag tag-matrilocal">入赘</span>
+                </label>
+                <label class="tag-option">
+                    <input type="checkbox" @bind="formData.IsConcurrent" />
+                    <span class="tag tag-concurrent">兼祧</span>
+                </label>
+                <label class="tag-option">
+                    <input type="checkbox" @bind="formData.IsFoster" />
+                    <span class="tag tag-foster">收养</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 职业 -->
+        <div class="form-group">
+            <label>职业</label>
+            <input @bind="formData.Occupation" class="form-input" placeholder="请输入职业" />
+        </div>
+
+        <!-- 学历 -->
+        <div class="form-group">
+            <label>学历</label>
+            <select @bind="formData.Education" class="form-select">
+                <option value="">请选择</option>
+                <option value="小学">小学</option>
+                <option value="初中">初中</option>
+                <option value="高中">高中/中专</option>
+                <option value="大专">大专</option>
+                <option value="本科">本科</option>
+                <option value="硕士">硕士</option>
+                <option value="博士">博士</option>
+            </select>
+        </div>
+
+        <!-- 居住地 -->
+        <div class="form-group">
+            <label>现居住地</label>
+            <input @bind="formData.Residence" class="form-input" placeholder="请输入现居住地" />
+        </div>
+
+        <!-- 联系方式（可选） -->
+        <div class="form-group">
+            <label>手机号码</label>
+            <input @bind="formData.Phone" type="tel" class="form-input" placeholder="选填，仅主编可见" />
+        </div>
+
+        <!-- 备注 -->
+        <div class="form-group">
+            <label>备注</label>
+            <textarea @bind="formData.Remarks" class="form-input form-textarea" 
+                      placeholder="其他需要补充的信息"></textarea>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" @onclick="Cancel">取消</button>
+            <button type="submit" class="btn btn-primary">提交信息</button>
+        </div>
+    </form>
+</div>
+
+@code {
+    private CollectionFormData formData = new();
+    private bool submitted = false;
+
+    private async Task OnSubmit()
+    {
+        // TODO: 调用 API 提交
+        submitted = true;
+        StateHasChanged();
+        
+        await Task.Delay(2000);
+        Navigation.NavigateTo("/");
+    }
+
+    private void Cancel() => Navigation.NavigateTo("/");
+}
+
+public class CollectionFormData
+{
+    public string Name { get; set; } = "";
+    public int Gender { get; set; } = 1;
+    public string BirthDate { get; set; } = "";
+    public string LunarBirth { get; set; } = "";
+    public string FatherName { get; set; } = "";
+    public string MotherName { get; set; } = "";
+    public string SpouseName { get; set; } = "";
+    public bool IsAdoption { get; set; }
+    public bool IsMatrilocal { get; set; }
+    public bool IsConcurrent { get; set; }
+    public bool IsFoster { get; set; }
+    public string Occupation { get; set; } = "";
+    public string Education { get; set; } = "";
+    public string Residence { get; set; } = "";
+    public string Phone { get; set; } = "";
+    public string Remarks { get; set; } = "";
+}
